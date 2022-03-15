@@ -1,0 +1,10 @@
+.registerpage{
+    background-image: url("../images/auth.jpg");
+    background-size: 100%;
+    text-align: center;
+    height: 10rem;
+   text-shadow: 1px 1px 2px #000 ;
+}
+h1{
+    margin-top: 3rem;
+}
