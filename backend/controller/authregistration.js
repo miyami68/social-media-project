@@ -1,6 +1,6 @@
 import User from '../models/auth.js';
 import { encrypt,istruepassword } from '../helper/encrypt.js';
-
+//register call back function 
 const register=async (req,res,next)=>{
   const  {Name,email,Password,Secret} = req.body;
 

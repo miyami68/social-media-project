@@ -3,8 +3,8 @@ import axios from 'axios'
 import {  toast } from 'react-toastify';
 import {Modal} from 'antd';
 import Router from 'next/router'
-import { AuthForm } from "../component/form/auth";
-
+import { AuthForm } from "../component/form/authregister";
+import Link from "next/link";
 const register=()=>{
      const [ok,setok]= useState(false);
      const [loading, Setloadstate]= useState(false);
@@ -60,14 +60,14 @@ const register=()=>{
             
     }
     return (
-         <div className="container-fluid ">
+         <div className="container-fluid">
             <div className="row registerpage ">
-            <div className="col">
-                <h1>register page</h1>
+            <div className="col   ">
+                <h1>Register </h1>
             </div>
             </div>
            
-            <div className="row">
+            <div className="row  ">
                 <div className="col-md-6 offset-md-3 ">
                       
                        <AuthForm  
@@ -91,6 +91,13 @@ const register=()=>{
                           <p>you have sucessfully registerd</p>
 
                         </Modal>
+                      <div className="row ">
+                        <div className="col ">
+                          <div className="">
+                            <p>already registered ? <Link href={'/login'}><a>login</a></Link></p>
+                          </div>
+                        </div>
+                      </div>
                                 </div>
                             </div>
                         </div>

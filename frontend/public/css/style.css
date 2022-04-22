@@ -1,10 +1,17 @@
-.registerpage{
-    background-image: url("../images/auth.jpg");
-    background-size: 100%;
-    text-align: center;
-    height: 10rem;
-   text-shadow: 1px 1px 2px #000 ;
+.registerpage {
+  background-image: url("../images/auth.jpg");
+  /* background-color: aquamarine; */
+  background-size: 100%;
+  text-align: center;
+
+  height: 8rem;
+  text-shadow: 1px 1px 2px #000;
 }
-h1{
-    margin-top: 3rem;
+h1 {
+  margin-top: 3rem;
+}
+.active {
+  text-shadow: 4px 3px 2px #000;
+  background-color: white;
+  color: red;
 }
