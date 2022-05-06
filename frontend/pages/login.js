@@ -10,7 +10,7 @@ const login=()=>{
    
   const [state, setstate] = useContext(UserContext);//handeling the context
   
-     const [loading, Setloadstate]= useState(false);
+   const [loading, Setloadstate]= useState(false);
    const  logins ={
              
                email:'',
@@ -27,7 +27,7 @@ const login=()=>{
 
              Setloadstate(true);
           //post request to backend sever
-               axios.post(`${process.env.NEXT_PUBLIC_API}/login`,
+               axios.post(`/login`,
                 login
             ).then((res)=>{
 
@@ -45,13 +45,13 @@ const login=()=>{
           //data set to local storage
                 window.localStorage.setItem('auth',JSON.stringify(res.data));
              
-              if(res.data){
+              if(res.data.error){
                 console.log(res.data);
+                toast.error(res.data.error);
                  
-                  Router.push('/');
               } 
               else{
-                toast.error(res.data);
+                Router.push('/');
               }      
               Setloadstate(false);
 
@@ -96,10 +96,19 @@ const login=()=>{
 
 
                      /> 
+                     {/* register link */}
                        <div className="row ">
                         <div className="col ">
                           <div className="">
                             <p>not yet registered ? <Link href={'/register'}><a>register</a></Link></p>
+                          </div>
+                        </div>
+                      </div>
+                      {/* forgot password link  */}
+                      <div className="row ">
+                        <div className="col ">
+                          <div >
+                             <Link href={'/forgot_password'}><a className="text-danger" >Forgot password</a></Link>
                           </div>
                         </div>
                       </div> 

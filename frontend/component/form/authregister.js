@@ -5,6 +5,7 @@ import { LoadingOutlined} from '@ant-design/icons';
           <form onSubmit={handleSubmit} className=" justify-content-center ">
                       <div  className='form-group p-2 ' >
                          <small>
+
                          <label htmlFor="Name" className="text-muted">Enter Name</label>
                          </small>
                          <input  autoComplete="false"    value={registation.Name} onChange={(e)=>{
@@ -12,6 +13,8 @@ import { LoadingOutlined} from '@ant-design/icons';
                                 setRegistation((prevState)=>({
                                 ...prevState,
                                 Name : e.target.value
+
+                                
                                 }))
                           
                              

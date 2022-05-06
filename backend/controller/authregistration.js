@@ -5,21 +5,32 @@ const register=async (req,res,next)=>{
   const  {Name,email,Password,Secret} = req.body;
 
    if(!Name){
-       res.send('name is required') ;
+    //    res.send('name is required') ;
+    return res.json({
+        error:'name is required'
+    })
    }
 
 if(!Password|| Password.length<6){
-    res.send('please enter password or enter it more than 6 char') ;
+    return res.json({
+        error:'please enter password or enter it more than 5 char'
+    })
+    // res.send('please enter password or enter it more than 5 char') ;
 }
 if(!Secret){
-    res.send('secret key required') ;
+    // res.send('secret key required') ;
+    return res.json({
+        error:'secret key required'
+    })
     
 }
 
-const userone = await User.findOne({email});
+  const userone = await User.findOne({email});
 
   if(userone){
-      res.send('email is already exist')
+    return res.json({
+        error:'email already exist'
+    })
   }
 console.log(req.body);
   const hashpassword= await encrypt(Password)
@@ -35,14 +46,17 @@ console.log(req.body);
              name:Name,
            email:email,
            password:hashpassword,
-           secret:Secret
+           secret:Secret.toLowerCase()
    })
+   console.log(user);
    try{
         
             await user.save()
             try{
                 console.log('saved data');
-                res.send(true)
+                return res.json({
+                    ok:'true'
+                })
             }
             catch(err){
                   console.log(err);

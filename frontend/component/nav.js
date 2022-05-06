@@ -32,7 +32,7 @@ const Navbar=()=>{
             </Link>
               {state!==null?(<>  
                 <Link href="/user_dashboard" >
-                  <a  className={`text-light nav-link  ${CurrentLink==='/user_dashboard'?"active":""}`} > {state&&state.user&&state.user.name} </a>
+                  <a  className={`text-light nav-link  ${CurrentLink==='/user_dashboard'?"active":""}`} > dashboard </a>
                </Link>
                <a onClick={cleanState} className={`text-light nav-link  ${CurrentLink==='/logout'?"active":""}`}  > logout </a>
               </>):(<>

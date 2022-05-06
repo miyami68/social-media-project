@@ -2,8 +2,10 @@ import express, { Router } from 'express';
 import mongoose  from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import  route  from './routes/auth.js';
+
+import   route from './routes/auth.js';
 import {readdirSync} from 'fs';
+// import  routepost from './routes/post.js'
 dotenv.config();
 
 const app=express();
@@ -22,5 +24,5 @@ app.use(express.json({
 app.use(express.urlencoded({extended:true}));
 app.use(cors(corsOptions));
 readdirSync('./routes').map((r)=> app.use('/api',route));
-// app.use('/api',route);
+// app.use('/api',routepost);
 app.listen(process.env.PORT,()=>console.log(`server is running on port ${process.env.PORT}`));

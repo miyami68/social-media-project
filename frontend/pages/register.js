@@ -25,16 +25,17 @@ const register=()=>{
                e.preventDefault();
              Setloadstate(true);
           
-               axios.post(`${process.env.NEXT_PUBLIC_API}/register`,
+               axios.post(`/register`,
                 registation
             ).then((res)=>{
-              console.log(res.data);  
-              if(res.data==true){
+              console.log(res.data.ok);  
+              if(res.data.ok=="true"){
                    
+                console.log("ritik");
                   setok(true);
               } 
               else{
-                toast.error(res.data);
+                toast.error(res.data.error);
               }      
               Setloadstate(false);
 

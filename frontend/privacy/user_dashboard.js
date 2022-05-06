@@ -16,15 +16,8 @@ const UserRoute = ({ children }) => {
 
   const getCurrentUser = async () => {
     try {
-      // make sure to send token in headers
-      // else you will see flickering page with non-stop api requests
-      // because home page is trying to redirect to login
-      // login will redirect back to home because user is logged in
-      let { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/current_user`, {
-        headers:{
-          Authorization:`Bearers ${state.token}`
-        }
-      });
+    
+      let { data } = await axios.get(`/current_user`);
       console.log("DATA getCurrent_user", data);
       if (data) setOk(true);
     } catch (err) {

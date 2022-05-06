@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-export const requiresignin=(req,res,next)=>{
+export const requiresignin= (req,res,next)=>{
    
 
   let tokenname;
@@ -11,15 +11,20 @@ export const requiresignin=(req,res,next)=>{
      res.sendStatus(404);
    }  
 
-  
+  //  console.log(tokenname);
     if(tokenname){
       
       const token = tokenname.split(' ')[1];
-
+ const xyz=process.env.NAME_TOKEN;
+  console.log(token,process.env.NAME_TOKEN);
       try{
-        jwt.verify(token,process.env.NAME_TOKEN,function (err,user){
+        jwt.verify(token,xyz,function (err,user){
+          if(!err){
             req.user=user;
-            next();
+            next()
+          }
+           
+          
         })
       }
        catch(err){
