@@ -26,9 +26,9 @@ const dashboard = () => {
   const  fetechPosts=async()=>{
     try{
         const {data} = await axios.get("/user_posts");
-          console.log(data);
+          // console.log(data);
           setDatastate(data);
-         console.log("iriti");
+        //  console.log("iriti");
         
      
 
@@ -45,7 +45,7 @@ const dashboard = () => {
         const {data}= await axios.post(`/create_post`,{Post, image});
           newPost("");
           setImage({});
-          console.log(data);
+          // console.log(data);
           //  console.log(data);
           if(data.error){
                  toast.error(data.error);
@@ -74,7 +74,7 @@ const dashboard = () => {
       try {
        
         const {data}  =  await axios.post("/upload_image", formData);
-             console.log(data.url,data.public_id);
+            //  console.log(data.url,data.public_id);
     //  setImage({
     //        url: data.url,
     //        public_id:data.public_id,

@@ -15,7 +15,7 @@ import { useContext } from "react";
 //rendering all posts to frontend
 const PostList = ({ datastate }) => {
     const router = useRouter();
-    console.log(datastate);
+    // console.log(datastate);
   const  [state,setState]=useContext(UserContext);
   return (
     <>
@@ -46,7 +46,7 @@ const PostList = ({ datastate }) => {
                 {state && state.user && state.user._id === datastate.postedBy._id && (
                   <>
                     <EditOutlined onClick={()=>{
-                      return   router.push(`/user/post/${datastate._id}`)
+                      return   router.push(`/post/${datastate._id}`)
                     } }   className="text-danger pt-2 h5 px-2 mx-auto" />
                     <DeleteOutlined className="text-danger pt-2 h5 px-2" />
                   </>

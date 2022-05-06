@@ -30,6 +30,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
+    "/post/[_id]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/post/[_id].js"
+    ],
     "/user_dashboard": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

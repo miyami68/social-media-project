@@ -14,7 +14,7 @@ const  UserProvider =({children})=> {
    useEffect(()=>{
 
        setstate(JSON.parse(window.localStorage.getItem('auth'))
-       
+
    ); 
    },[])
    const token = state&&state.token?state.token:' ';
