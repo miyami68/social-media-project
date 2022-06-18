@@ -31,7 +31,7 @@ import User from './auth.js';
 
  
 
-}, {timeStamps:true});
+},  { timestamps: true });
 
 
  const  _default =  mongoose.model('Post',postSchema);

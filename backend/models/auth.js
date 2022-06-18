@@ -25,19 +25,24 @@ const {Schema} = mongoose;
      type: String,
      required:true,
 },
- photo:
- {
-     type: String
- },
+image: {
+    url: String,
+    public_id: String,
+  },
+username:{
+    type:String,
+    unique:true,
+    requiredPaths:true,
 
+},
  about:{},
 
- follwoers: [{type:Schema.ObjectId, ref:'User'}],
- following:[{type:Schema.ObjectId, ref:'User'}],
+ followers:[{type:String, ref:'User'}],
+ following:[{type:String, ref:'User'}],
 
  
 
-}, {timeStamps:true});
+},  { timestamps: true });
 
 
  const  _default =  mongoose.model('User',userSchema);

@@ -10,9 +10,7 @@ function Myapp({Component,pagesProbs}){
      return (
          
         <UserProvider>
-         <Head>
-          <link rel="stylesheet" href="/css/style.css" />
-         </Head>
+        
          <Navbar/>
          <ToastContainer 
             position="top-center"

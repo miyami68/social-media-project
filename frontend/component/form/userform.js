@@ -11,9 +11,9 @@ import 'react-quill/dist/quill.snow.css'
 
 
  return (
-     <div>
-          <div className="card">
-      <div className="card-body pb-3">
+     <div className='pb-3'>
+    <div className="card">
+      <div className="card-body ">
         <form className="form-group">
           <ReactQuill
               theme='snow'

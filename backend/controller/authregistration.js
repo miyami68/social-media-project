@@ -1,4 +1,5 @@
 import User from '../models/auth.js';
+import { nanoid } from 'nanoid'
 import { encrypt,istruepassword } from '../helper/encrypt.js';
 //register call back function 
 const register=async (req,res,next)=>{
@@ -46,6 +47,7 @@ console.log(req.body);
              name:Name,
            email:email,
            password:hashpassword,
+           username: nanoid(6),
            secret:Secret.toLowerCase()
    })
    console.log(user);

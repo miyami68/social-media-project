@@ -7,7 +7,7 @@ export const UserPosts = async (req,res)=>{
         
        const  posts= await Post.find().populate("postedBy","name _id image").sort({createdAt:-1});
       //{postedBy: req.user._id}
-       console.log(posts);
+    //    console.log(posts); b
        res.json(posts);
 
 

@@ -25,17 +25,36 @@ const Navbar=()=>{
 //  })
   return(
       <>
-        <nav className='nav bg-primary justify-content-end   '  >
+        <nav className='nav bg-primary justify-content-between   '  >
         
               <Link href="/"  >
             <a  className={`text-light nav-link  ${CurrentLink==='/'?"active":""}`}  > Memories </a>
             </Link>
+
+
               {state!==null?(<>  
-                <Link href="/user_dashboard" >
-                  <a  className={`text-light nav-link  ${CurrentLink==='/user_dashboard'?"active":""}`} > dashboard </a>
-               </Link>
-               <a onClick={cleanState} className={`text-light nav-link  ${CurrentLink==='/logout'?"active":""}`}  > logout </a>
-              </>):(<>
+                <div className="dropdown">
+  <a className="btn dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+    {state&&state.user&&state.user.name}
+  </a>
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li>
+    <Link href="/user_dashboard" >
+         <a  className={`text-dark nav-link  ${CurrentLink==='/user_dashboard'?"active":""}`} > dashboard </a>
+    </Link>
+    </li>
+    <li>
+    <Link href="/profile/update" >
+         <a  className={`text-dark nav-link  ${CurrentLink==='/profile/update'?"active":""}`} >profile</a>
+    </Link>
+    </li>
+    <li>
+    <a onClick={cleanState} className={`text-dark nav-link  ${CurrentLink==='/logout'?"active":""}`}  > logout </a>
+    </li>
+    
+  </ul>
+</div>
+          </>):(<>
                
                 <Link href="/register" >
             <a  className={`text-light nav-link  ${CurrentLink==='/register'?"active":""}`} > register </a>
