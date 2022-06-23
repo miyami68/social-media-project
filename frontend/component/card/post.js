@@ -89,7 +89,7 @@ const Post = ({ datastate,handleDelete,handleLike,handleUnLike,handleComment ,co
 
             </div>
             {datastate.comments && datastate.comments.length > 0 && (
-              <ol className="list-group" style={{maxHeight:kuch&&"150px",overflow:kuch&&"scroll"}}>
+              <ol className="list-group" style={{maxHeight:true&&"150px",overflow:true&&"scroll"}}>
                 {datastate.comments.slice(0, commentnumber).map((comment,index) => (
                   <li key={index} className="list-group-item d-flex justify-content-between align-items-start">
                     <div className="ms-2 me-auto">

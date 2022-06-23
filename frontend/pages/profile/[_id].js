@@ -22,7 +22,6 @@ const profilePage= () => {
       
 
     },[router.query._id]);
-
     const fetchUserProfile=async()=>{
        try {
            const {data}=await axios.get(`/fetch-profile/${router.query._id}`);
@@ -80,5 +79,7 @@ const profilePage= () => {
   );
 
 };
+
+
 
 export default profilePage;

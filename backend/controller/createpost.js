@@ -23,14 +23,14 @@ export const CreatePost=async(req,res)=>{
                  content:content,
                  postedBy:req.user._id,
 
-
-             })
+        });
           
 
-       const value=  await post.save();
-        console.log( value , "successfully created post");
+       await post.save();
+     
+        const data= await Post.findById(post._id).populate("postedBy"," -password -secret");
         
-        res.json(post);
+        res.json(data);
          
         }
         catch(e){

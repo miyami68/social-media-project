@@ -12,12 +12,14 @@ import Modal from "antd/lib/modal/Modal";
 import Comment from "../component/form/comment";
 import { Pagination } from 'antd';
 import Search from "../component/search";
+import io from 'socket.io-client';
 
+const socket = io("http://localhost:5000",{
+  reconnection:true,
+});
 const dashboard = () => {
-
-  //console.log("deepak concept");
   const [state,setState] = useContext(UserContext);
-  const router = useRouter();
+  const   router = useRouter();
   
   const [datastate,setDatastate]= useState([]);
   const [Post,newPost]= useState("");
@@ -29,7 +31,7 @@ const dashboard = () => {
   const [currentPost,setCurrentPost]=useState({});
   const [total ,setTotal]=useState(0);
   const [page ,setPage]=useState(1);
-  
+ 
   // const [image,setImage]= useState({});
   // const [loading ,updateloading]=useState(false);
    useEffect(()=>{
@@ -132,8 +134,8 @@ const dashboard = () => {
                setPage(1);
                toast.success("successfully created post");
                if(state&&state.token) NewsFeed();
+               socket.emit("new-post",data);
          }
-        // setPage(1);
       }
     catch(err){
         console.log(err);

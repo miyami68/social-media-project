@@ -24,7 +24,8 @@ import {totalPost} from '../controller/totalpost.js';
 import {addComment,removeComment} from '../controller/addandremovecomment.js';
 import {SearchUser} from '../controller/searchuser.js';
 import {profilePage} from '../controller/profilepage.js';
-//register route
+import {homePage} from  "../controller/homepagepost.js";
+;//register route
 router.post('/register',register);
 //login route
 router.post('/login',login);
@@ -83,6 +84,8 @@ router.get("/total-post",totalPost);
 router.get('/search-user/:query',SearchUser);
 //serach profile
 router.get('/fetch-profile/:query',profilePage);
+//fetch all post
+router.get('/homepage-post',homePage);
 const _default = router;
 export { _default as default };
 

@@ -4,13 +4,11 @@ import Router from 'next/router';
 import axios  from 'axios';
 const UserContext = createContext();
 const  UserProvider =({children})=> {
-    
-    
      const [state, setstate] = useState({
          user:{},
          token:""
      })
-   
+     
    useEffect(()=>{
 
        setstate(JSON.parse(window.localStorage.getItem('auth'))
@@ -29,6 +27,7 @@ const  UserProvider =({children})=> {
     },
     function (error) {
       // Do something with request error
+       console.log(error);
       let res = error.response;
       if (res.status === 401 && res.config && !res.config.__isRetryRequest) {
         setstate(null);

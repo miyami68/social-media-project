@@ -6,16 +6,17 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {UserProvider} from '../context/authlog';
 function Myapp({Component,pagesProbs}){
-    
+     
      return (
          
         <UserProvider>
-        
+       
          <Navbar/>
          <ToastContainer 
             position="top-center"
          />
        <Component{...pagesProbs}/>
+
      </UserProvider>
        
          
@@ -24,4 +25,5 @@ function Myapp({Component,pagesProbs}){
      )
 
 }
+
 export default Myapp

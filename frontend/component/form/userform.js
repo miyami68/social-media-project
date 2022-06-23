@@ -6,10 +6,6 @@ import {CameraOutlined} from "@ant-design/icons"
 import {LoadingOutlined} from "@ant-design/icons" 
 import 'react-quill/dist/quill.snow.css'
  const UserForm =({Post,newPost,PostSubmit,handleImage,image,uploading})=>{
-
-
-
-
  return (
      <div className='pb-3'>
     <div className="card">
