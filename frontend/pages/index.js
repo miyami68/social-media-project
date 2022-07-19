@@ -10,7 +10,8 @@ import io from 'socket.io-client';
 const socket = io(process.env.NEXT_PUBLIC_SERVER_URL_BACKEND,{
   reconnection:true,
 });
-const Home=(props)=> {
+const Home=(data)=> {
+  // console.log(data, "again");
   const [state,setstate]=useContext(UserContext);
   const [posts,setPosts]= useState([]);
   const [comment,setComment]=useState("");
@@ -164,10 +165,10 @@ const Home=(props)=> {
 
 // export async function getServerSideProps() {
 //   const {data}= await axios.get('/homepage-post');
- 
+//     console.log(data," ye hai");
 //   return {
 //     props: {
-//       posts:data,
+//       abc: {data},
 //     }, 
 //   }
 // }

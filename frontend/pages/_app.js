@@ -5,7 +5,7 @@ import 'antd/dist/antd.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {UserProvider} from '../context/authlog';
-function Myapp({Component,pagesProbs}){
+function Myapp({Component,pagesProps}){
      
      return (
          
@@ -15,7 +15,7 @@ function Myapp({Component,pagesProbs}){
          <ToastContainer 
             position="top-center"
          />
-       <Component{...pagesProbs}/>
+       <Component {...pagesProps}/>
 
      </UserProvider>
        

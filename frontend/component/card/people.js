@@ -27,7 +27,7 @@ const People = ({ people, handleFollow, handleUnFollow }) => {
                       <Link href={`/profile/${ user._id }`}>
                       <a> { user.name }</a>
                       </Link>
-                 {user&&user.followers&&user.followers.includes(state.user._id)?<span onClick={()=>{
+                 {user&&user.followers&&user.followers.includes(state&&state.user&&state.user._id)?<span onClick={()=>{
                     handleUnFollow(user)
                   }} className="text-primary pointer">UnFollow</span>:<span onClick={()=>{
                     handleFollow(user)

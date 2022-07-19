@@ -35,6 +35,10 @@ username:{
     requiredPaths:true,
 
 },
+role:{
+    type:String,
+    default:"Subscriber",
+},
  about:{},
 
  followers:[{type:String, ref:'User'}],

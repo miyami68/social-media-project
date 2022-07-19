@@ -25,6 +25,7 @@ import {addComment,removeComment} from '../controller/addandremovecomment.js';
 import {SearchUser} from '../controller/searchuser.js';
 import {profilePage} from '../controller/profilepage.js';
 import {homePage} from  "../controller/homepagepost.js";
+import {isAdmin} from '../middle_ware/admin.js';
 ;//register route
 router.post('/register',register);
 //login route
@@ -86,6 +87,10 @@ router.get('/search-user/:query',SearchUser);
 router.get('/fetch-profile/:query',profilePage);
 //fetch all post
 router.get('/homepage-post',homePage);
+//delete by admin
+router.delete('/admin/delete-post/:_id',requiresignin,isAdmin,DeletePost);
+//admin page
+router.get('/current-admin',requiresignin,isAdmin,current_User);
 const _default = router;
 export { _default as default };
 
